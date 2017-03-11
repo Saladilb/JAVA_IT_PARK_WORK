@@ -35,7 +35,7 @@ public class Program {
             return true;
         }
         else 
-            System.out.println("Необходимо вводить число. Программа остановлена.");
+            System.out.println("РќРµРѕР±С…РѕРґРёРјРѕ РІРІРѕРґРёС‚СЊ С‡РёСЃР»Рѕ. РџСЂРѕРіСЂР°РјРјР° РѕСЃС‚Р°РЅРѕРІР»РµРЅР°.");
         return false;
     } 
 

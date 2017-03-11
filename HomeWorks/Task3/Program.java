@@ -19,7 +19,7 @@ public class Program {
                     break;
             }
             if (stopProgram != 1)
-                System.out.println("Произведение чисел, сумма цифр которых - простое число, равно " + result);  
+                System.out.println("РџСЂРѕРёР·РІРµРґРµРЅРёРµ С‡РёСЃРµР», СЃСѓРјРјР° С†РёС„СЂ РєРѕС‚РѕСЂС‹С… - РїСЂРѕСЃС‚РѕРµ С‡РёСЃР»Рѕ, СЂР°РІРЅРѕ " + result);    
         }
     }
 
@@ -39,7 +39,7 @@ public class Program {
             return true;
         }
         else {
-            System.out.println("Необходимо вводить число. Программа остановлена.");
+            System.out.println("РќРµРѕР±С…РѕРґРёРјРѕ РІРІРѕРґРёС‚СЊ С‡РёСЃР»Рѕ. РџСЂРѕРіСЂР°РјРјР° РѕСЃС‚Р°РЅРѕРІР»РµРЅР°.");
             stopProgram = 1;
         }
         return false;
