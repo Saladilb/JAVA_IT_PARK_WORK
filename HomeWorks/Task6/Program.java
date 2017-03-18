@@ -51,8 +51,7 @@ public class Program {
     private void needResult() {
         long result = 1;
         for (int i = 0; i < lenghtArray; i ++) {
-            if (i % 2 != 0) 
-                if (arrayInput[i] % 2 == 0)
+            if (i % 2 != 0 && arrayInput[i] % 2 == 0) 
                     result *= arrayInput[i];  
         }
         System.out.println();
