@@ -1,17 +1,15 @@
 
-public class Car implements ParkingObject{
-    @Override
+public class Car extends Transport implements ParkingObject{
+
     public String getNumber() {
         return null;
     }
 
-    @Override
-    public boolean parking() {
+    public boolean onParkingLot() {
         return false;
     }
 
-    @Override
-    public boolean unparking() {
+    public boolean leaveParkingLot() {
         return false;
     }
 }

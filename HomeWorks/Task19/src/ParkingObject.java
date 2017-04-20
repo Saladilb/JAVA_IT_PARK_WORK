@@ -1,6 +1,6 @@
 
-public interface ParkingObject {
+public interface ParkingObject <Transport>{
     String getNumber();
-    boolean parking();
-    boolean unparking();
+    boolean onParkingLot();
+    boolean leaveParkingLot();
 }

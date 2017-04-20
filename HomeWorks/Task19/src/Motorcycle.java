@@ -1,17 +1,17 @@
 
-public class Motorcycle implements ParkingObject{
+public class Motorcycle extends Transport implements ParkingObject{
     @Override
     public String getNumber() {
         return null;
     }
 
     @Override
-    public boolean parking() {
+    public boolean onParkingLot() {
         return false;
     }
 
     @Override
-    public boolean unparking() {
+    public boolean leaveParkingLot() {
         return false;
     }
 }
