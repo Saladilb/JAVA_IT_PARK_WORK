@@ -9,8 +9,7 @@ public class Main {
     }
 
     private void run() {
-        Generation generation = new Generation();
-        generation.gener
+
     }
 
 }

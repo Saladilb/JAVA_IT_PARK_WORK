@@ -3,10 +3,20 @@ package Generation;
 import models.Transport.Bike;
 import models.Transport.Car;
 import models.Transport.Motorcycle;
-
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Generation {
+    private static ArrayList TransportListObject = new ArrayList();
+    private static Generation ourInstance = new Generation();
+
+    public static ArrayList getInstance() {
+        return TransportListObject;
+    }
+
+    private Generation() {
+    }
+
     Random random = new Random();
     private int totalNumberOfPlaces;
     private int totalNumberOfTransport;
