@@ -1,21 +1,22 @@
+package models.Transport;
+
 import java.util.Random;
 
 abstract class Transport {
     Random random = new Random();
-    protected String numberOfCar;
+    protected String transportNumber;
     protected boolean statusOfParking;
 
     public Transport() {
-        setCountOfTrasports();  // generation random total count of transport. Must be greater than 10 and less than 50
-        setNumberOfCar();       // create random number state machine. May not be ( just bought or another problem)
+        setNumberOfTransport();       // create random number state machine. May not be ( just bought or another problem)
         setStatusOfParking();   // randomly we arrange the transport ( already parked or not)
     }
 
 
-    private void setNumberOfCar() {
+    private void setNumberOfTransport() {
         boolean existenceNumberOfCar = random.nextBoolean();
         if (existenceNumberOfCar)
-            numberOfCar = "" + getRandomChar() + random.nextInt(899) + 100 + getRandomChar() + getRandomChar();
+            transportNumber = "" + getRandomChar() + random.nextInt(899) + 100 + getRandomChar() + getRandomChar();
     }
 
     private char getRandomChar() {
