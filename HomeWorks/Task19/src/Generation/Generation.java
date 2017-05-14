@@ -3,33 +3,25 @@ package Generation;
 import models.Transport.Bike;
 import models.Transport.Car;
 import models.Transport.Motorcycle;
-import java.util.ArrayList;
+import models.Transport.Transport;
 import java.util.Random;
 
 public class Generation {
-    private static ArrayList TransportListObject = new ArrayList();
-    private static Generation ourInstance = new Generation();
+    private static Generation genInstance = new Generation();
 
-    public static ArrayList getInstance() {
-        return TransportListObject;
+    private Random random = new Random();
+    private Transport[] transport;
+    private int totalNumberOfPlaces;
+
+    public static Generation getInstance() {
+        return genInstance;
+    }
+    public int getTotalNumberOfPlaces() {
+        return totalNumberOfPlaces;
     }
 
     private Generation() {
-    }
-
-    Random random = new Random();
-    private int totalNumberOfPlaces;
-    private int totalNumberOfTransport;
-    private int totalNumberOfCars;
-    private int totalNumberOfBikes;
-    private int totalNumberOfMotorcycles;
-
-    private Car cars [];
-    private Bike bikes [];
-    private Motorcycle motorcycles [];
-
-    private void generStart() {
-        generationTransport();   //random count
+        generationTransport();
         generationRandomParkingPlace();
     }
 
@@ -38,27 +30,33 @@ public class Generation {
     }
 
     private void generationTransport() {
-        totalNumberOfTransport = random.nextInt(50) + 20;
-        totalNumberOfCars = random.nextInt(totalNumberOfTransport/2) + totalNumberOfTransport/3;
-        totalNumberOfMotorcycles = (totalNumberOfTransport - totalNumberOfCars) / 2 + 5;
-        totalNumberOfBikes = totalNumberOfTransport - totalNumberOfCars - totalNumberOfMotorcycles;
+        int totalNumberOfTransport = random.nextInt(50) + 20;
+        int totalNumberOfCars = random.nextInt(totalNumberOfTransport/2) + totalNumberOfTransport/3;
+        int totalNumberOfMotorcycles = (totalNumberOfTransport - totalNumberOfCars) / 2 + 5;
+        transport = new Transport[totalNumberOfTransport];
 
-
-        cars = new Car[totalNumberOfCars];
-        motorcycles = new Motorcycle[totalNumberOfMotorcycles];
-        bikes = new Bike[totalNumberOfBikes];
-
-        for (int i = 0; i < cars.length - 1; i ++) {
-            cars[i] = new Car();
+        for (int i = 0; i < totalNumberOfTransport; i ++) {
+            if (i < totalNumberOfCars) {
+                transport[i] = new Car();
+            }
+            else if (i >= totalNumberOfCars && i < totalNumberOfMotorcycles) {
+                transport[i] = new Motorcycle();
+            }
+            else {
+                transport[i] = new Bike();
+            }
         }
-
-        for (int i = 0; i < motorcycles.length - 1; i ++) {
-            motorcycles[i] = new Motorcycle();
-        }
-
-        for (int i = 0; i < bikes.length - 1; i ++) {
-            bikes[i] = new Bike();
-        }
-
     }
+
+    private String generationNumberOfTransport() {
+        boolean existenceNumberOfTransport = random.nextBoolean();
+        if (existenceNumberOfTransport)
+            return "" + getRandomChar() + random.nextInt(899) + 100 + getRandomChar() + getRandomChar();
+        return null;
+    }
+
+    private char getRandomChar() {
+        return (char)(new Random().nextInt(26 + 'A'));
+    }
+
 }
