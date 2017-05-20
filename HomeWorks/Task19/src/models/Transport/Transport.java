@@ -1,11 +1,14 @@
 package models.Transport;
 
-import Generation.Generation;
-
 public abstract class Transport {
-    protected String transportNumber;
-    protected Transport () {
-        Generation generation = Generation.getInstance();
-        generation.
-    }
+    private String transportNumber;
+    private String type;
+
+    public void setType(String type) {this.type = type;}
+
+    public String getTransportNumber() {return transportNumber;}
+
+    public String getType() {return type;}
+
+    public void setTransportNumber(String transportNumber) {this.transportNumber = transportNumber;}
 }

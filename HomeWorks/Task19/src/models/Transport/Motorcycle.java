@@ -3,12 +3,12 @@ package models.Transport;
 public class Motorcycle extends Transport implements ParkingObject{
 
     @Override
-    public boolean toCallInTheParking() {
-        return false;
+    public String toCallInTheParking() {
+        return null;
     }
 
     @Override
-    public boolean toLeaveTheParking() {
-        return false;
+    public String toLeaveTheParking() {
+        return null;
     }
 }

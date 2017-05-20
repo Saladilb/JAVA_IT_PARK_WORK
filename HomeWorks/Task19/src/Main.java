@@ -1,17 +1,14 @@
 import Generation.Generation;
-
-import java.util.ArrayList;
+import models.Transport.Transport;
 
 public class Main {
-    ArrayList transport;
+    Transport[] transport;
+    int totalNumberOfPlaces;
 
     private void run() {
         Generation generation = Generation.getInstance();
-        transport = generation.getTransportListObject();
-        onParking();
-    }
-
-    private void onParking() {
+        transport = generation.getTransport();
+        totalNumberOfPlaces = generation.getTotalNumberOfPlaces();
     }
 
     public static void main(String[] args) {
