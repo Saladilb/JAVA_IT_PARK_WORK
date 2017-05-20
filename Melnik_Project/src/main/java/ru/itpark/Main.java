@@ -21,7 +21,6 @@ public class Main {
         User user = new User("minimen", 177);
         usersService.register(user);
         User mishaFromBd = usersService.getUserById(9);
-        System.out.println(mishaFromBd.getId() + " " + mishaFromBd.getName() + " " + mishaFromBd.getAge());
 
         List<User> users = usersService.getListOfUsers();
         System.out.println(users);
