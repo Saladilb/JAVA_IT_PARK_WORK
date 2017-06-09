@@ -1,10 +1,10 @@
 
-
 public class Main {
-    private ClassOurSite classOurSite = new ClassOurSite();
+    private WorkWithSite workWithSite = new WorkWithSite();
     public static void main(String[] args) {
         Main main = new Main();
         main.run();
+        System.out.println("lol");
     }
 
     private void run() {
@@ -14,9 +14,9 @@ public class Main {
         String userLogin = propertiesFile.getLogin();
         String userPassword = propertiesFile.getPassword();
 
-        classOurSite.enterTheSite(userLogin, userPassword);
-        for (int i = 0; i < 500; i ++) {
-            classOurSite.clickCycle();
+        workWithSite.enterTheSite(userLogin, userPassword);
+        for (int i = 0; i < 10000; i ++) {
+            workWithSite.clickCycle();
         }
     }
 }
