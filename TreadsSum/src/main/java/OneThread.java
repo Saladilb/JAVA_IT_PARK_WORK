@@ -11,6 +11,7 @@ public class OneThread extends Thread {
     public void run() {
         for (int i = min; i < max; i++) {
             result += Data.getArr()[i];
+            System.out.println(currentThread().getName());
         }
         Data.setResult(Data.getResult() + result);
     }

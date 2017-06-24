@@ -7,11 +7,11 @@ abstract public class Data {
         Data.arr = new int[count];
     }
 
-    public synchronized static void setResult(int result) {
+    public static void setResult(int result) {
         Data.result = result;
     }
 
-    public synchronized static int[] getArr() {return arr;}
+    public static int[] getArr() {return arr;}
 
-    public synchronized static int getResult() {return result;}
+    public static int getResult() {return result;}
 }
