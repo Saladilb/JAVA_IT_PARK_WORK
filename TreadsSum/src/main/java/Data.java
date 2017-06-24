@@ -1,5 +1,5 @@
 
-public class Data {
+abstract public class Data {
     private static int arr[];
     private static int result;
 
