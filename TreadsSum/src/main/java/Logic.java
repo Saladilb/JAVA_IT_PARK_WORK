@@ -1,7 +1,9 @@
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class Logic {
+
     private int min, max, countThreads, countElements, forMostThreads, forFirst;
     Random random = new Random();
     private Scanner scanner;
@@ -62,16 +64,20 @@ public class Logic {
     }
 
     private void useThreads() {
-        for (int i = 0; i < countThreads; i++) {
+        OneThread [] oneThreads = new OneThread[countThreads];
+        for (int i = 0; i < countThreads; i++) {;
             OneThread oneThread = new OneThread(min, max);
             oneThread.start();
+            oneThreads [i] = oneThread;
+            min = max;
+            max += forMostThreads;
+        }
+        for (int i = 0; i < oneThreads.length; i ++) {
             try {
-                oneThread.join();
+                oneThreads[i].join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            min = max;
-            max += forMostThreads;
         }
     }
 

@@ -1,9 +1,0 @@
-ru\itpark\converters\Converter.class
-ru\itpark\dto\UserDto.class
-ru\itpark\Application.class
-ru\itpark\config\PersistenceConfig.class
-ru\itpark\service\UsersService.class
-ru\itpark\models\User.class
-ru\itpark\service\UsersServiceImpl.class
-ru\itpark\controllers\UsersController.class
-ru\itpark\dao\UsersDao.class

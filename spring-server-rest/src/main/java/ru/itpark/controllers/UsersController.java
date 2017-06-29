@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.itpark.dto.UserDto;
 import ru.itpark.service.UsersService;
-import ru.itpark.service.UsersServiceImpl;
 
 import java.util.List;
 

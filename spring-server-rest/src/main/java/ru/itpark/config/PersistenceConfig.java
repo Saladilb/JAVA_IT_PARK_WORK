@@ -12,16 +12,22 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
-
+// говорим, что этот класс является конфигурационным
 @Configuration
+// говорим, что у нас есть автогенерируемые репозитории в пакете dao
 @EnableJpaRepositories("ru.itpark.dao")
+// включили транзакции
 @EnableTransactionManagement
 public class PersistenceConfig {
+    // нужна для транзакций
     @Bean
     PlatformTransactionManager transactionManager() {
         return new JpaTransactionManager(entityManagerFactory().getObject());
     }
 
+    // отвечает за работу с сущностями
+    // - кеширования
+    // - сессии
     @Bean
     LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean =
@@ -33,6 +39,8 @@ public class PersistenceConfig {
         return localContainerEntityManagerFactoryBean;
     }
 
+    // компонент, который соединяет Hibernate с
+    // Spring JPA
     @Bean
     HibernateJpaVendorAdapter hibernateJpaVendorAdapter() {
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
@@ -41,7 +49,7 @@ public class PersistenceConfig {
         return adapter;
     }
 
-
+    // компонент отвечающий за информацию о хранилище данных
     @Bean
     DataSource dataSource() {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
